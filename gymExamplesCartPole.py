@@ -160,7 +160,7 @@ def test_DQL():
             break
     print("Done\n")
 
-# For Train the model comment test_DQL part in first time
+# For Train the model comment test_DQL part in first time.
 train_model(100)
 
 #When model trained uncomment this and comment train_model() part for testing model.
