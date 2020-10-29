@@ -147,6 +147,7 @@ def test_DQL():
     state = env.reset()
     state = np.reshape(state, [1, 4])
     time_t = 0
+    agent.epsilon = 0
     while True:
         env.render()
         action = trained_model.act(state)
