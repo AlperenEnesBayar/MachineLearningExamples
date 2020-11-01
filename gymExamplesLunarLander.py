@@ -13,7 +13,7 @@ class DQLAgent:
     def __init__(self, env):
         self.state_size = env.observation_space.shape[0]
         self.action_size = env.action_space.n
-        self.epsilon = 0.01
+        self.epsilon = 1
         self.epsilon_min = 0.01
         self.epsilon_decay = 0.99
         self.gamma = 0.99
