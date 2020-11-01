@@ -82,20 +82,6 @@ class DQLAgent:
         y_target[range(batch_size), actions] = y
         self.model.fit(np.vstack(minibatch[:, 0]), y_target, epochs=1, verbose=0)
 
-    #    def replay(self, batch_size):
-    #        # training
-    #        if len(self.memory) < batch_size:
-    #            return
-    #        minibatch = random.sample(self.memory,batch_size)
-    #        for state, action, reward, next_state, done in minibatch:
-    #            if done:
-    #                target = reward
-    #            else:
-    #                target = reward + self.gamma*np.amax(self.model.predict(next_state)[0])
-    #            train_target = self.model.predict(state)
-    #            train_target[0][action] = target
-    #            self.model.fit(state,train_target, verbose = 0)
-
     def adaptiveEGreedy(self):
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
